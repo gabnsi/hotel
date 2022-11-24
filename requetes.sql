@@ -25,3 +25,10 @@ CREATE TABLE "reservation" (
 
 INSERT INTO client VALUES(1, "Dupont", "Jean")
 INSERT INTO chambres VALUES(1, 3, 70)
+
+INSERT INTO reservations VALUES(1, 1, 1, "2022/10/25","2022/10/26")
+
+
+SELECT nom FROM client;
+SELECT nom FROM client
+WHERE id_client=1;

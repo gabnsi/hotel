@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <h1>Formulaire POST</h1>
+    <p>Voici un formulaire avec POST</p>
+
+    <div class="formulaire">
+      <form class="form" action="/resultat" method="post">
+        <label for="nom">Nom</label> :
+        <input type="text" name="nom" value="">
+        <label for="prenom">Prénom</label> :
+        <input type="text" name="prenom" value="">
+        <input type="submit" name="" value="Envoyer">
+      </form>
+    </div>
+
+    <h1>Formulaire GET</h1>
+    <p>Voici un formulaire avec GET</p>
+
+    <div class="formulaire">
+      <form class="form" action="/vehicule" method="get">
+
+        <label for="marque">Marque</label> :
+        <input type="text" name="marque" value="">
+
+        <label for="couleur">Couleur</label> :
+        <input type="text" name="couleur" value="">
+
+
+        <input type="submit" name="" value="Envoyer">
+      </form>
+    </div>
+  </body>
+</html>

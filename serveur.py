@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from clients import Client
 
 app = Flask(__name__)
 
@@ -9,27 +10,16 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-
-@app.route('/resultat', methods=['GET', 'POST'])
-def resultat():
+@app.route('/client', methods=['POST'])
+def client():
     result = request.values  # méthode POST
-    nom = result['nom']
-    prenom = result['prenom']
-    print(nom, prenom)
-    return render_template("resultat.html",
-                           nom=nom,
-                           prenom=prenom)
-
-
-@app.route('/vehicule')
-def vehicule():
-    result = request.args  # méthode GET
-    marque = result['marque']
-    couleur = result['couleur']
-    print(marque, couleur)
-    return render_template('vehicule.html',
-                           marque=marque,
-                           couleur=couleur)
+    Nom = result['nom']
+    Prenom = result['prenom']
+    client = (None, Nom, Prenom)
+    client.inserer_client()
+#    return render_template("resultat.html",
+#                           nom=nom,
+#                           prenom=prenom)
 
 
 app.run(debug=True, port=3579)

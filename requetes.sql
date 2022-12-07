@@ -1,8 +1,7 @@
 CREATE TABLE "client" (
-	"id_client"	INTEGER NOT NULL UNIQUE,
+	"id_client"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
 	"nom"	TEXT NOT NULL,
-	"prenom"	TEXT NOT NULL,
-	PRIMARY KEY("id_client")
+	"prenom"	TEXT NOT NULL
 );
 
 CREATE TABLE "chambres" (
@@ -26,9 +25,6 @@ CREATE TABLE "reservation" (
 INSERT INTO client VALUES(1, "Dupont", "Jean")
 INSERT INTO chambres VALUES(1, 3, 70)
 
-INSERT INTO reservations VALUES(1, 1, 1, "2022/10/25","2022/10/26")
-
-
-SELECT nom FROM client;
-SELECT nom FROM client
-WHERE id_client=1;
+INSERT INTO "main"."reservation"
+("id_reservation", "id_client", "id_chambre", "date_debut", "date_fin")
+VALUES (1, 4, 42, '2022-10-13', '2022-10-16');

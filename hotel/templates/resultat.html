@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>
+      Résultat
+    </title>
+  </head>
+  <body>
+    <h1>Bonjour {{ nom }}</h1>
+    <p>Ton prénom c'est {{ prenom }}, c'est ça ?</p>
+    <ul>
+      {% for lettre in prenom %}
+        <li>{{ lettre }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

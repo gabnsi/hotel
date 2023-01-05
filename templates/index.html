@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+
+    <h1>Reservation :</h1>
+    <div>
+      <form class="form" action="/reserver" method="post">
+
+              <label for="client">Client</label>:
+              <select name="id_client" id="client">
+                  <option value="">Veuillez choisir</option>
+                {% for id_client, nom, prenom in clients %}
+                  <option value={{id_client}}>{{nom}} {{prenom}}</option>
+                {% endfor %}
+              </select>
+
+
+              <label for="chambre">Chambre</label>:
+              <select name="id_chambre" id="chambre">
+                  <option value="">Veuillez choisir</option>
+                {% for id_chambre, capacite, tarif in chambres %}
+                  <option value={{id_chambre}}>chambre {{id_chambre}} : {{capacite}} personnes ; tarif ($) : {{tarif}}</option>
+                {% endfor %}
+              </select>
+
+
+              <label for="nom">Date début</label> :
+              <input type="text" name="date_debut" value="" placeholder="AAAA-MM-J">
+              <label for="nom">Date fin</label> :
+              <input type="text" name="date_fin" value="" placeholder="AAAA-MM-J">
+      
+              <input type="submit" value="Valider">
+      </form>
+
+    </div>
+
+
+
+
+    <h1>Formulaire POST</h1>
+    <p>ajouter client</p>
+
+    <div class="formulaire">
+      <form class="form" action="/ajouter_client" method="post">
+        <label for="nom">Nom</label> :
+        <input type="text" name="nom" value="">
+        <label for="prenom">Prénom</label> :
+        <input type="text" name="prenom" value="">
+        <input type="submit" name="" value="Envoyer">
+      </form>
+    </div>
+
+    <h1>Formulaire POST</h1>
+    <p>supprimer client</p>
+
+    <div class="formulaire">
+      <form class="form" action="/supprimer_client" method="post">
+        <label for="nom">Nom</label> :
+        <input type="text" name="nom" value="">
+        <label for="prenom">Prénom</label> :
+        <input type="text" name="prenom" value="">
+        <input type="submit" name="" value="Envoyer">
+      </form>
+    </div>
+
+
+  </body>
+</html>

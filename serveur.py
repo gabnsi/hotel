@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-from clients import Reservation, Client, liste_client, liste_chambres
+from clients import Reservation, Client, liste_client, liste_chambres, liste_reservations
 
 app = Flask(__name__)
 
@@ -10,7 +10,8 @@ app = Flask(__name__)
 def index():
     clients = liste_client()
     chambres = liste_chambres()
-    return render_template("index.html", clients=clients, chambres=chambres)
+    reservations = liste_reservations()
+    return render_template("index.html", clients=clients, chambres=chambres, reservations=reservations)
 
 @app.route('/ajouter_client', methods=['POST'])
 def ajouter_client():

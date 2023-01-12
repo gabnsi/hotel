@@ -69,5 +69,30 @@
     </div>
 
 
+    <div>
+
+          <table>
+              <thead>
+                  <tr>
+                      <th colspan="2">Reservations</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>chambre</td>
+                      <td>date</td>
+                  </tr>
+                      {% for id_chambre, date_debut, date_fin in reservations %}
+                  <tr>
+                      <td>{{id_chambre}}</td>
+                      <td>{{date_debut}}, {{date_fin}}</td>
+                  </tr>
+                      {% endfor %}
+              </tbody>
+          </table>
+
+
+    </div>
+
   </body>
 </html>

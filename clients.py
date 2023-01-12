@@ -94,3 +94,13 @@ class Reservation:
 
 #r = Reservation(None, 11, 24, '2022-14-11', '2022-17-11')
 #r.reserver()
+
+def liste_reservations():
+    req5 = "SELECT id_chambre, date_debut, date_fin FROM reservation "
+    conn = sqlite3.connect(fichier_BDD)
+    cur = conn.cursor()
+    cur.execute(req5)
+    reservations = cur.fetchall()
+    cur.close()
+    conn.close()
+    return reservations

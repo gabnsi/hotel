@@ -1,4 +1,4 @@
-# hotel
+# Hotel
 
 ## Ce qui marche
 
